@@ -23,7 +23,7 @@ source 'https://rubygems.org'
  # Use Puma as the app server
  gem 'puma', '~> 3.0'
  # Use SCSS for stylesheets
-  gem 'bootstrap-sass'
+ gem 'bootstrap-sass'
  gem 'sass-rails', '~> 5.0'
  # Use Uglifier as compressor for JavaScript assets
  gem 'uglifier', '>= 1.3.0'
@@ -41,8 +41,12 @@ source 'https://rubygems.org'
    gem 'listen', '~> 3.0.5'
  end
 
- gem 'bootstrap-sass'
-
+ group :development, :test do
+   gem 'rspec-rails', '~> 3.0'
+   gem 'rails-controller-testing'
+   gem 'shoulda'
+   gem 'factory_girl_rails', '~> 4.0'
+ end
 
  gem 'devise'
 

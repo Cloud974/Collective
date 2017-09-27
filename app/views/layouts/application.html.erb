@@ -14,13 +14,15 @@
         <li><%= link_to "blocipedia", welcome_index_path %></li>
         <li><%= link_to "About", welcome_about_path %></li>
 
-        <div class="pull-right user-info">
+        <div class="pull-right user-info nav">
           <% if user_signed_in? %>
-            Signed in as: <strong><%= current_user.email %></strong> |
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'pull-right' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+            <li class="pull-right"><%= image_tag current_user.avatar_url(48)%></li>
+            <li class="pull-right"><%= link_to current_user.email, edit_user_registration_path(current_user) %></li>
+
           <% else %>
-            <%= link_to "Sign Up", new_user_registration_path, class: 'pull-right'  %> -
-            <%= link_to "Sign In", new_user_session_path, class: 'pull-right' %>
+            <li class="pull-right"><%= link_to "Sign In", new_user_session_path, class: 'nav-tabs' %></li>
+            <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path, class: 'nav-tabs'  %></li>
           <% end %>
         </div>
       </ul>
