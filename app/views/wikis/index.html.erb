@@ -8,9 +8,11 @@
           <h4 class="media-heading">
             <%= link_to wiki.title, wiki %>
           </h4>
-          <small>
-            <%= wiki.body %>
-          </small>
+          <div class="fr-view">
+            <small>
+              <%= raw (wiki.body).truncate(300) %>
+            </small>
+          </div>
         </div>
       </div>
     <% end %>

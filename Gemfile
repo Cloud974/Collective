@@ -51,3 +51,9 @@ source 'https://rubygems.org'
  gem 'devise'
 
  gem 'figaro'
+
+ gem 'pundit'
+
+ gem 'simple_form'
+ gem 'wysiwyg-rails'
+ gem 'font-awesome-rails'
