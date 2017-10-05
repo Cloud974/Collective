@@ -57,3 +57,5 @@ source 'https://rubygems.org'
  gem 'simple_form'
  gem 'wysiwyg-rails'
  gem 'font-awesome-rails'
+
+ gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
