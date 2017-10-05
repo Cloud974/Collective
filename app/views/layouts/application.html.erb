@@ -17,6 +17,13 @@
 
         <div class="pull-right user-info nav">
           <% if user_signed_in? %>
+            <% if current_user.standard? %>
+              <li class="pull-right">
+                <%= form_tag charges_path do %>
+                  <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount="<%= @stripe_btn_data[:amount] %>" data-description="<%= @stripe_btn_data[:description] %>" ></script>
+                <% end %>
+              </li>
+            <% end %>
             <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
             <li class="pull-right"><%= image_tag current_user.avatar_url(48)%></li>
             <li class="pull-right"><%= link_to current_user.email, edit_user_registration_path(current_user) %></li>

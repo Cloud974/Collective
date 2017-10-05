@@ -58,4 +58,6 @@ source 'https://rubygems.org'
  gem 'wysiwyg-rails'
  gem 'font-awesome-rails'
 
- gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+ gem 'faker'
+
+gem 'stripe'
