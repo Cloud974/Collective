@@ -57,7 +57,8 @@ source 'https://rubygems.org'
  gem 'simple_form'
  gem 'wysiwyg-rails'
  gem 'font-awesome-rails'
+ gem 'redcarpet'
 
  gem 'faker'
 
-gem 'stripe'
+ gem 'stripe'
