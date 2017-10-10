@@ -1,0 +1,24 @@
+<h1>Collaborators#index</h1>
+
+<table class="table">
+  <thead>
+    <th>Email</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <% if @wiki.users.include?(user) %>
+          <td>
+            <%= link_to "Remove", wiki_collaborator_path(@wiki, @wiki.collaborator_for(user)), method: :delete, class: "btn btn-danger" %>
+          </td>
+        <% else %>
+          <td>
+            <%= link_to "Add", wiki_collaborators_path(@wiki, user_id: user.id), method: :post, class: 'btn btn-success' %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
