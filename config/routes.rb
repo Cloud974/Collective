@@ -6,8 +6,13 @@ Rails.application.routes.draw do
 
   resources :charges, only: [:new, :create]
 
-  get 'about' => 'welcome/about'
+  get 'about' => 'welcome#about'
   root 'welcome#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users do
+    member do
+      post :cancel_premium
+    end
+  end
+
 end

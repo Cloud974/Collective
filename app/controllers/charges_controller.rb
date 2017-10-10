@@ -26,18 +26,9 @@ class ChargesController < ApplicationController
   def new
     @stripe_btn_data = {
       key: "#{ Rails.configuration.stripe[:publishable_key] }",
-      description: "BigMoney Membership - #{current_user.name}",
+      description: "Premium Membership - #{current_user.name}",
       amount: 15_00
     }
   end
-
-  def cancel
-    current_user.standard!
-    current_user.wikis.update_all(private: false)
-
-    flash[:notice] = "Your account has been downgraded."
-    redirect_to root_path
-  end
-
 
 end

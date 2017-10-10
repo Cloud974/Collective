@@ -15,6 +15,16 @@ users = User.all
   user: users.sample,
   title: Faker::RickAndMorty.character,
   body: Faker::RickAndMorty.quote
+  private: false
+  )
+end
+
+5.times do
+  Wiki.create!(
+  user: users.sample,
+  title: Faker::RickAndMorty.character,
+  body: Faker::RickAndMorty.quote
+  private: true
   )
 end
 wikis = Wiki.all
